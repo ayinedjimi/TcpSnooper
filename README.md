@@ -72,6 +72,12 @@ L'exécutable `TcpSnooper.exe` sera créé.
 - --
 
 
+# 🚀 Lister connexions avec netstat (comparaison)
+
+# 🚀 Créer listener test (PowerShell)
+
+# 🚀 Puis vérifier dans TcpSnooper
+
 ## Détection de Connexions Suspectes
 
 Rechercher :
@@ -82,12 +88,6 @@ Rechercher :
 
 - --
 
-
-# 🚀 Lister connexions avec netstat (comparaison)
-
-# 🚀 Créer listener test (PowerShell)
-
-# 🚀 Puis vérifier dans TcpSnooper
 
 ## Environnement LAB-CONTROLLED
 
@@ -155,6 +155,14 @@ https://www.ayinedjimi-consultants.fr
 
 MIT License - Voir `LICENSE.txt` à la racine.
 
+
+- --
+
+<div align="center">
+
+**⭐ Si ce projet vous plaît, n'oubliez pas de lui donner une étoile ! ⭐**
+
+</div>
 
 ---
 
