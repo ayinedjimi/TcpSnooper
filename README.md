@@ -24,6 +24,12 @@ https://www.ayinedjimi-consultants.fr
 - --
 
 
+# 🚀 Lister connexions avec netstat (comparaison)
+
+# 🚀 Créer listener test (PowerShell)
+
+# 🚀 Puis vérifier dans TcpSnooper
+
 ## 📌 Prérequis
 
 - Windows 10 / Windows Server 2016+ (x64)
@@ -32,12 +38,6 @@ https://www.ayinedjimi-consultants.fr
 
 - --
 
-
-# 🚀 Lister connexions avec netstat (comparaison)
-
-# 🚀 Créer listener test (PowerShell)
-
-# 🚀 Puis vérifier dans TcpSnooper
 
 ## Compilation
 
@@ -155,6 +155,14 @@ https://www.ayinedjimi-consultants.fr
 
 MIT License - Voir `LICENSE.txt` à la racine.
 
+
+- --
+
+<div align="center">
+
+**⭐ Si ce projet vous plaît, n'oubliez pas de lui donner une étoile ! ⭐**
+
+</div>
 
 - --
 
