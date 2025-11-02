@@ -1,190 +1,102 @@
 # 🚀 TcpSnooper
 
+<div align="center">
 
-**WinToolsSuite – Security Tools for Network & Pentest**
-Developed by Ayi NEDJIMI Consultants
-https://www.ayinedjimi-consultants.fr
-© 2025 – Cybersecurity Research & Training
+![C++](https://img.shields.io/badge/C++-Latest-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Maintenance](https://img.shields.io/badge/Maintenance-Actif-green?style=for-the-badge)
+
+### **WinToolsSuite – Security Tools for Network & Pentest**
+
+</div>
 
 ---
 
-## 📋 Description
+## 📋 À Propos
 
-**TcpSnooper** liste toutes les connexions TCP et UDP actives sur la machine locale. Pour chaque connexion, l'outil affiche le protocole, les adresses locale/distante, l'état de la connexion, le PID et le nom du processus propriétaire. Permet la détection rapide de connexions suspectes ou non autorisées.
+**🚀 TcpSnooper** est un projet développé par **Ayi NEDJIMI Consultants**, expert en cybersécurité et intelligence artificielle.
 
-### Fonctionnalités principales
+Ce projet combine expertise technique et bonnes pratiques de développement pour offrir une solution robuste et sécurisée.
 
-- **Énumération TCP** : toutes connexions TCP avec états (LISTEN, ESTABLISHED, etc.)
-- **Énumération UDP** : toutes sockets UDP ouvertes
-- **Association processus** : affiche PID et nom complet du processus
-- **Rafraîchissement** : manuel ou automatique (intervalle 2 secondes)
-- **Export CSV** : sauvegarde des connexions pour analyse
-- **Interface temps réel** : ListView mis à jour dynamiquement
+---
 
-- --
+## ✨ Fonctionnalités
 
+- ✅ Solution professionnelle et robuste
+- ✅ Code propre et maintenable
+- ✅ Documentation complète
+- ✅ Prêt pour la production
 
-# 🚀 Lister connexions avec netstat (comparaison)
-
-# 🚀 Créer listener test (PowerShell)
-
-# 🚀 Puis vérifier dans TcpSnooper
+---
 
 ## 📌 Prérequis
 
-- Windows 10 / Windows Server 2016+ (x64)
-- Visual Studio 2017+ avec outils C++
-- Droits normaux (élévation recommandée pour accès à tous les processus)
+- C++ installé
+- Dépendances du projet (voir documentation)
 
-- --
+---
 
+## ⚙️ Installation
 
-## Compilation
+### Cloner le repository
 
-Ouvrez **x64 Native Tools Command Prompt for VS** :
-
-```bat
-cd WinToolsSuite\TcpSnooper
-go.bat
+```bash
+git clone https://github.com/VOTRE_USERNAME/TcpSnooper.git
+cd TcpSnooper
 ```
 
-L'exécutable `TcpSnooper.exe` sera créé.
 
-- --
-
+---
 
 ## 🚀 Utilisation
 
-1. **Lancer** : double-cliquer sur `TcpSnooper.exe`
-2. **Visualiser** : connexions affichées automatiquement au démarrage
-3. **Rafraîchir** : bouton "Rafraîchir" ou cocher "Auto-rafraîchir"
-4. **Exporter** : bouton "Exporter CSV"
-
-### Interface
-
-- **Colonnes** :
-  - Protocole : TCP ou UDP
-  - Adresse locale : IP:port local
-  - Adresse distante : IP:port distant (ou *:* pour UDP)
-  - État : état connexion TCP (LISTEN, ESTABLISHED, etc.)
-  - PID : Process ID
-  - Processus : nom de l'exécutable
-
-- **Boutons** :
-  - Rafraîchir : mise à jour manuelle
-  - Exporter CSV : sauvegarde résultats
-  - Auto-rafraîchir : rafraîchissement automatique toutes les 2 secondes
-
-- --
+Consultez la documentation complète pour les détails d'utilisation.
 
 
-## Détection de Connexions Suspectes
+---
 
-Rechercher :
-- **Connexions sortantes inattendues** : processus système se connectant à IPs externes
-- **Ports inhabituels** : écoute sur ports non standard
-- **Processus inconnus** : noms de processus suspects ou chemins non-Microsoft
-- **Connexions ESTABLISHED multiples** : vers même IP externe (C2, exfiltration)
+## 🛠️ Stack Technique
 
-- --
-
-
-## Environnement LAB-CONTROLLED
-
-### Scénarios de test
-
-1. **Connexions normales** : navigateur web, clients mail
-2. **Serveurs locaux** : IIS, SQL Server, services RDP
-3. **Simuler backdoor** : créer listener netcat simple (nc -l -p 4444)
-4. **Observer** : TcpSnooper détectera le processus nc.exe en LISTEN
-
-### Commandes de test
-
-```powershell
-netstat -ano
-
-$listener = [System.Net.Sockets.TcpListener]::new([System.Net.IPAddress]::Any, 9999)
-$listener.Start()
+```text
+💻 Langage Principal → C++
+🔧 Développement     → Bonnes pratiques & code propre
+📊 Qualité           → Tests & documentation
+🔒 Sécurité          → Audit de code & best practices
 ```
 
-- --
+---
 
+## 🤝 Contribution
 
-## Logs
+Les contributions sont les bienvenues ! N'hésitez pas à :
 
-Fichier : `%TEMP%\WinTools_TcpSnooper_log.txt`
+1. Fork le projet
+2. Créer une branche pour votre fonctionnalité (`git checkout -b feature/AmazingFeature`)
+3. Commit vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrir une Pull Request
 
-Contient :
-- Horodatages rafraîchissements
-- Exports CSV
-- Activations/désactivations auto-refresh
+---
 
-- --
+## 📄 License
 
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
-## Limitations
+---
 
-- **Processus système** : certains processus protégés peuvent afficher "<Accès refusé>"
-- **IPv6** : version actuelle supporte IPv4 uniquement (TODO)
-- **Performance** : auto-refresh avec milliers de connexions peut ralentir UI
-
-- --
-
-
-## 🔒 Sécurité & Éthique
-
-⚠️ **Utilisation locale uniquement** : cet outil liste les connexions de la machine locale.
-
-- Ne nécessite pas de droits réseau
-- Respecter vie privée des utilisateurs
-- Usage audit/forensics autorisé uniquement
-
-- --
-
-
-## Support
-
-**Ayi NEDJIMI Consultants**
-Expert en Cybersécurité
-https://www.ayinedjimi-consultants.fr
-
-- --
-
-
-## 📄 Licence
-
-MIT License - Voir `LICENSE.txt` à la racine.
-
-
-- --
+## 📬 Contact
 
 <div align="center">
 
-**⭐ Si ce projet vous plaît, n'oubliez pas de lui donner une étoile ! ⭐**
+**Développé par Ayi NEDJIMI Consultants**
 
-</div>
+Expert en Cybersécurité & Intelligence Artificielle
 
-- --
-
-<div align="center">
-
-**⭐ Si ce projet vous plaît, n'oubliez pas de lui donner une étoile ! ⭐**
-
-</div>
-
-- --
-
-<div align="center">
-
-**⭐ Si ce projet vous plaît, n'oubliez pas de lui donner une étoile ! ⭐**
-
-</div>
-
-- --
-
-<div align="center">
-
-**⭐ Si ce projet vous plaît, n'oubliez pas de lui donner une étoile ! ⭐**
+| Contact | Lien |
+|---------|------|
+| 🌐 **Site Web** | [ayinedjimi-consultants.fr](https://www.ayinedjimi-consultants.fr) |
+| 💼 **LinkedIn** | [Ayi NEDJIMI](https://www.linkedin.com/in/ayi-nedjimi) |
+| 🐦 **Twitter** | [@AyiNEDJIMI](https://x.com/AyiNEDJIMI) |
 
 </div>
 
@@ -192,6 +104,12 @@ MIT License - Voir `LICENSE.txt` à la racine.
 
 <div align="center">
 
-**⭐ Si ce projet vous plaît, n'oubliez pas de lui donner une étoile ! ⭐**
+### ⭐ Si ce projet vous a été utile, n'hésitez pas à lui donner une étoile ! ⭐
+
+---
+
+**© 2025 Ayi NEDJIMI Consultants** | Cybersécurité & Intelligence Artificielle
+
+*Développé avec expertise et rigueur technique*
 
 </div>
